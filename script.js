@@ -4,17 +4,18 @@ const colorBtn = document.querySelector(".btn");
 const para = document.querySelector("p");
 const taskBtn = document.querySelector("button");
 
-window.addEventListener("load", showData);
+// Load saved tasks when the page loads
+document.addEventListener("DOMContentLoaded", loadTasks);
 
 taskBtn.addEventListener("click", (evt) => {
   evt.preventDefault();
   if (inputBox.value === "") {
     alert("Enter some Task");
-  } else if (inputBox.value.length > 41) {
+  } else if (inputBox.value.length > 42) {
     alert("Word limit exceeded! Maximum 41 characters allowed");
   } else {
     const task = document.createElement("li");
-    ul.append(task);
+    ul.prepend(task);
     task.innerHTML = `${inputBox.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
     getCheck(task);
     genRanColor(task);
@@ -27,7 +28,6 @@ function getCheck(task) {
   task.addEventListener("click", (evt) => {
     if (evt.target.tagName === "LI") {
       task.classList.toggle("checked");
-      saveData();
     } else if (evt.target.tagName === "I") {
       task.remove();
       saveData();
@@ -50,7 +50,7 @@ function colourSwitch() {
   }
 }
 
-colorBtn.parentElement.addEventListener("click", colourSwitch); // Correct event listener
+colorBtn.parentElement.addEventListener("click", colourSwitch);
 
 function genRanColor(task) {
   if (isEnable) {
@@ -58,7 +58,6 @@ function genRanColor(task) {
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
     task.style.color = `rgb(${red}, ${green}, ${blue})`;
-    saveData();
   }
 }
 
@@ -66,25 +65,25 @@ function saveData() {
   const tasks = [];
   ul.querySelectorAll("li").forEach((task) => {
     tasks.push({
-      text: task.textContent,
+      text: task.firstChild.textContent,
       checked: task.classList.contains("checked"),
-      color: task.style.color,
     });
   });
-  localStorage.setItem("data", JSON.stringify(tasks));
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function showData() {
-  JSON.parse(localStorage.getItem("data")).forEach((savedTask) => {
-    if (savedTask) {
+function loadTasks() {
+  const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+  if (savedTasks) {
+    savedTasks.forEach((savedTask) => {
       const task = document.createElement("li");
-      ul.append(task);
-      task.innerHTML = `${savedTask.text}  <span><i class="fa-regular fa-trash-can"></i></span>`;
-      task.style.color = savedTask.color;
-      getCheck(task);
-      if (savedTask.checked) {
+      task.innerHTML = `${savedTask.text} <span><i class="fa-regular fa-trash-can"></i></span>`;
+      if (savedTask.checked === false) {
         task.classList.add("checked");
       }
-    }
-  });
+      ul.prepend(task);
+      getCheck(task);
+      genRanColor(task);
+    });
+  }
 }

@@ -37,7 +37,7 @@ h1 img {
   width: 3.5rem;
 }
 
-form {
+.container form {
   display: flex;
   align-items: center;
   border-radius: 2rem;
@@ -64,7 +64,6 @@ form button {
   width: 6rem;
   font-size: 1.2rem;
   font-weight: bold;
-  cursor: pointer;
   border-radius: 2rem;
   margin-right: 0.1rem;
 }
@@ -85,7 +84,7 @@ h2 {
 p {
   font-size: 1.3rem;
   font-weight: 600;
-  animation: rainbow 2s ease infinite;
+  animation: rainbow 5s ease infinite;
 }
 
 @keyframes rainbow {
@@ -113,9 +112,11 @@ p {
 }
 
 .head2 div {
-  display: flex;
   height: 1.5rem;
-  width: 3rem;
+  width: 3.1 rem;
+  display: flex;
+  justify-content: flex-start;
+  flex: 0.11;
   padding: 0 0.1rem 0 0.1rem;
   align-items: center;
   background-color: #80b918;
@@ -125,15 +126,9 @@ p {
 
 .btn {
   background-color: #fff;
-  height: 1.3rem;
-  width: 1.3rem;
-  padding: 1px;
+  height: 1.4rem;
+  width: 1.4rem;
   border-radius: 50%;
-  transition: all 0.5s ease;
-}
-
-.onSlide {
-  transform: translate(25px);
 }
 
 ul li {
@@ -141,11 +136,9 @@ ul li {
   align-items: center;
   height: 2.5rem;
   margin: 1rem 1rem 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   list-style: none;
-  color: black;
-  position: relative;
 }
 
 ul li::before {
@@ -160,8 +153,7 @@ ul li::before {
 
 Ul li span {
   position: absolute;
-  right: 1rem;
-  color: black;
+  right: 26rem;
 }
 
 .checked {

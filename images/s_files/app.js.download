@@ -1,0 +1,16 @@
+const taskBtn = document.querySelector("button");
+const input = document.querySelector("input");
+const ul = document.querySelector("ul");
+
+taskBtn.addEventListener("click", (evt) => {
+  evt.preventDefault();
+  if (input.value === "") {
+    alert("Enter some Task");
+  } else {
+    let newList = document.createElement("li");
+    ul.prepend(newList);
+    // newList.innerText = input.value;
+    newList.innerHTML = `${input.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
+    // input.value = "";
+  }
+});
