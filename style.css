@@ -40,12 +40,12 @@ h1 img {
 form {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 2rem;
   border: 2px solid lightgray;
 }
 
 input {
-  flex: 1;
   height: 3rem;
   padding-left: 2rem;
   font-size: 1.2rem;
@@ -205,7 +205,6 @@ Ul li span {
   }
 
   input {
-    flex: 1;
     padding-left: 1rem;
     font-size: 1rem;
   }
@@ -218,9 +217,5 @@ Ul li span {
 @media (max-width: 350px) {
   .container {
     width: 45vh;
-  }
-
-  input {
-    flex: 0.75;
   }
 }
