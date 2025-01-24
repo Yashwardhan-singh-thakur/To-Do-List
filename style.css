@@ -210,15 +210,9 @@ Ul li span {
     width: 45vh;
   }
 
-  form {
-    display: flex;
-    align-items: center;
-    border-radius: 2rem;
-    border: 2px solid lightgray;
-  }
-
   input {
-    padding-left: 1.25rem;
+    flex: 0.75;
+    padding-left: 1rem;
     font-size: 1rem;
   }
 
