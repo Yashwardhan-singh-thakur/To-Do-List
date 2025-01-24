@@ -141,12 +141,17 @@ ul li {
   display: flex;
   align-items: center;
   height: 2.5rem;
+  font-size: clamp(12px, 2vw, 16px);
   margin: 1rem 1rem 0 1rem;
   font-size: 1.5rem;
   font-weight: 400;
   list-style: none;
   color: black;
   position: relative;
+}
+
+.para {
+  width: 86%;
 }
 
 ul li::before {

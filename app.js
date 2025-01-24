@@ -14,8 +14,11 @@ taskBtn.addEventListener("click", (evt) => {
     alert("Word limit exceeded! Maximum 41 characters allowed");
   } else {
     const task = document.createElement("li");
+    const para = document.createElement("p");
     ul.append(task);
-    task.innerHTML = `${inputBox.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
+    task.append(para);
+    para.classList.add("para");
+    para.innerHTML = `${inputBox.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
     getCheck(task);
     genRanColor(task);
     saveData();
