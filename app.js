@@ -1,7 +1,7 @@
 const inputBox = document.querySelector("input");
 const ul = document.querySelector("ul");
 const colorBtn = document.querySelector(".btn");
-const para = document.querySelector("p");
+const para = document.querySelector(".head2 p");
 const taskBtn = document.querySelector("button");
 
 window.addEventListener("load", showData);
@@ -14,11 +14,11 @@ taskBtn.addEventListener("click", (evt) => {
     alert("Word limit exceeded! Maximum 41 characters allowed");
   } else {
     const task = document.createElement("li");
-    const para = document.createElement("p");
+    const liPara = document.createElement("p");
     ul.append(task);
-    task.append(para);
-    para.classList.add("para");
-    para.innerHTML = `${inputBox.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
+    task.append(liPara);
+    liPara.classList.add("para");
+    task.innerHTML = `${inputBox.value} <span><i class="fa-regular fa-trash-can"></i></span>`;
     getCheck(task);
     genRanColor(task);
     saveData();
