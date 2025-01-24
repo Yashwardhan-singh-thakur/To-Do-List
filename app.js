@@ -19,8 +19,8 @@ taskBtn.addEventListener("click", (evt) => {
     getCheck(task);
     genRanColor(task);
     saveData();
+    inputBox.value = "";
   }
-  inputBox.value = "";
 });
 
 function getCheck(task) {

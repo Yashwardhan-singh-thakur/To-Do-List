@@ -176,6 +176,15 @@ Ul li span {
   .container {
     width: 85vh;
   }
+
+  ul li {
+    margin: 1rem 0.5rem 0 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .head2 {
+    margin: 1rem 0.5rem 0 0.5rem;
+  }
 }
 
 @media (max-width: 650px) {
@@ -198,7 +207,7 @@ Ul li span {
 
 @media (max-width: 350px) {
   .container {
-    width: 100%;
+    width: 45vh;
   }
 
   form {
@@ -212,6 +221,7 @@ Ul li span {
     padding-left: 1.25rem;
     font-size: 1rem;
   }
+
   form button {
     font-size: 1rem;
   }
