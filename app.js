@@ -10,7 +10,7 @@ taskBtn.addEventListener("click", (evt) => {
   evt.preventDefault();
   if (inputBox.value === "") {
     alert("Enter some Task");
-  } else if (inputBox.value.length > 41) {
+  } else if (inputBox.value.length > 40) {
     alert("Word limit exceeded! Maximum 41 characters allowed");
   } else {
     const task = document.createElement("li");
