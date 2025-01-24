@@ -203,12 +203,6 @@ Ul li span {
   .container {
     width: 50vh;
   }
-}
-
-@media (max-width: 350px) {
-  .container {
-    width: 45vh;
-  }
 
   input {
     flex: 0.75;
@@ -218,5 +212,11 @@ Ul li span {
 
   form button {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    width: 45vh;
   }
 }
